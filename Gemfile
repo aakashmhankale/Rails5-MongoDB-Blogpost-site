@@ -11,12 +11,10 @@ gem 'rails', '~> 5.0.1'
 
 gem 'mongoid' , git: "https://github.com/mongodb/mongoid.git"
 # Use sqlite3 as the database for Active Record
-group :production do
-  gem 'mongo'
-end
-group :devlopment, :test do
-  gem 'sqlite3'
-end
+
+#group :devlopment, :test do
+  #gem 'sqlite3'
+#end
 # Use Puma as the app server
 gem 'puma', '~> 3.0'
 # Use SCSS for stylesheets
