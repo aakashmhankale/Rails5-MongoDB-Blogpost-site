@@ -9,7 +9,7 @@ end
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.0.1'
 
-grm 'ruby', '~> 2.3.4'
+gem 'ruby', '~> 2.3.4'
 
 gem 'mongoid' , git: "https://github.com/mongodb/mongoid.git"
 # Use sqlite3 as the database for Active Record
