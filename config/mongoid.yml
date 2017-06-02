@@ -145,7 +145,7 @@ development:
     # Application name that is printed to the mongodb logs upon establishing a
     # connection in server versions >= 3.4. Note that the name cannot exceed 128 bytes.
     # app_name: MyApplicationName
-test:
+Test:
   clients:
     default:
       database: myapp_test
@@ -155,7 +155,23 @@ test:
         read:
           mode: :primary
         max_pool_size: 1
+
+
+
+# mongoid 5.x
+#
 production:
-  sessions:
+  clients:
     default:
-      uri: <%= ENV['MONGOLAB_URI'] %>
+     # The standard MongoDB connection URI allows for easy
+     # replica set connection setup.
+     # Use environment variables or a config file to keep your
+     # credentials safe e.g. <%= ENV['MONGODB_URI'] %>.
+     uri: mongodb://heroku_5vb3nmvh:3u4ok9tj3ejgpquhekccm6qrqp@ds147599.mlab.com:47599/heroku_5vb3nmvh
+
+     options:
+       # The default timeout is 5, which is the time in seconds
+       # for a connection to time out.
+       # We recommend 15 because it allows for plenty of time
+       # in most operating environments.
+       connect_timeout: 15
